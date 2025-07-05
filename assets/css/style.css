@@ -1,0 +1,820 @@
+body {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  background: #fdfdfd;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+.hero-section {
+  max-width: 1440px;
+  margin: auto;
+}
+
+.hero-row {
+  display: flex;
+  padding: 0px 74px 110px;
+}
+
+.hero-col {
+  width: 100%;
+}
+
+.hero-col-2 {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-col {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+h1.hero-gradient {
+  font-family: "Oxanium", sans-serif;
+  font-size: 90px;
+  font-weight: 700;
+  background: -webkit-linear-gradient(0deg, #ff9346, #d160de);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+  padding: 24px 0;
+  line-height: 90px;
+}
+
+.hero-text {
+  font-weight: 500;
+  font-size: 33px;
+  color: #4e4e4e;
+}
+
+.fill-btn a {
+  text-decoration: none;
+  background: #000;
+  color: #fff;
+  padding: 14px 24px;
+  display: block;
+  border-radius: 8px;
+  font-family: "Oxanium";
+  font-weight: 600;
+  font-size: 20px;
+  border: 2px solid #000;
+  transition: all 0.3s ease-in-out;
+}
+
+.fill-btn a:hover {
+  background: #414141;
+  border: 2px solid #414141;
+}
+
+.outline-btn a {
+  text-decoration: none;
+  border: 2px solid #000;
+  color: #000;
+  padding: 14px 24px;
+  border-radius: 8px;
+  font-family: "Oxanium";
+  font-weight: 600;
+  font-size: 20px;
+  transition: all 0.3s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.outline-btn a img {
+  transition: all 0.3s ease-in-out;
+}
+
+.outline-btn a:hover {
+  border: 2px solid #414141;
+  color: #414141;
+}
+
+.outline-btn a:hover img {
+  opacity: 0.7;
+}
+
+.hero-btn-wrapper {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  padding-top: 58px;
+}
+
+.hero-col-2 img {
+  transition: all 0.3s ease-in-out;
+  width: 100%;
+}
+
+.hero-col-2 img:hover {
+  rotate: -5deg;
+}
+
+/*feature sec*/
+
+.feature-section {
+  max-width: 1440px;
+  margin: auto;
+}
+
+.feature-case-title {
+  color: #e64a11;
+  font-weight: 600;
+  font-size: 48px;
+  font-family: "Oxanium";
+}
+
+.feature-case-sub-title {
+  color: #fc7d4d;
+  font-weight: 600;
+  font-size: 32px;
+  font-family: "Oxanium";
+  padding: 24px 0;
+}
+
+.feature-row {
+  padding: 64px 74px 40px;
+}
+
+.feature-case-card-wrapper {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 1fr 1fr;
+  padding-bottom: 32px;
+}
+
+.feature-case-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  border: 1px solid #e5e5e5;
+  border-radius: 24px;
+}
+
+.feature-case-card-description {
+  padding: 32px 0 24px;
+}
+
+.feature-case-card-description {
+  padding: 32px 0 24px;
+  font-family: "Oxanium", sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+}
+
+img.feature-case-card-img {
+  transition: all 0.3s ease-in-out;
+  width: 100%;
+}
+
+.about-col-2 img {
+  width: 100%;
+}
+
+.feature-case-card:hover img.feature-case-card-img {
+  scale: 1.1;
+}
+
+.feature-case-card-img-wrapper {
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+/*about sec*/
+
+.about-section {
+  max-width: 1440px;
+  margin: auto;
+}
+
+.about-row {
+  display: flex;
+  padding: 64px 74px 40px;
+}
+
+.about-col {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  order: 2;
+}
+
+.about-col-2 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.about-title {
+  font-family: "Oxanium";
+  font-weight: 600;
+  color: #e64a11;
+  font-size: 48px;
+}
+
+.about-description {
+  font-size: 16px;
+  color: #202020;
+  padding-bottom: 50px;
+}
+
+.about-title {
+  padding-bottom: 30px;
+}
+
+/*work experiance*/
+
+.workexp-section {
+  max-width: 1440px;
+  margin: auto;
+}
+
+.workexp-row {
+  padding: 0px 74px 110px;
+}
+
+.workexp-title {
+  padding-bottom: 32px;
+  font-family: "Oxanium";
+  font-weight: 600;
+  font-size: 32px;
+  color: #fc7d4d;
+}
+
+.workexp-card-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.workexp-company-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-grow: 3;
+}
+
+.workexp-position {
+  flex-grow: 2;
+}
+
+img.workexp-logo {
+  max-width: 40px;
+  max-height: 40px;
+}
+
+.workexp-card {
+  display: flex;
+  align-items: center;
+  padding: 12px 25px;
+  border-radius: 12px;
+  border: 1px solid #e5e5e5;
+  font-family: "Oxanium";
+  font-size: 20px;
+}
+
+.workexp-active {
+  background: #fc7d4d;
+  color: #fff;
+  font-weight: 600;
+}
+
+/*my design section*/
+
+.faq-container h2 {
+  font-family: "Oxanium";
+  font-weight: 600;
+  font-size: 48px;
+  color: #e64a11;
+  margin: 0;
+  padding-bottom: 24px;
+}
+
+.mydesign-row {
+  padding: 0px 74px 110px;
+}
+
+.mydesign-description {
+  padding-bottom: 46px;
+}
+
+.faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: solid 1px #e5e5e5;
+  padding-bottom: 20px;
+}
+
+.faq-info-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  font-family: "Oxanium";
+  font-weight: 500;
+  font-size: 20px;
+}
+
+span.icon {
+  font-size: 40px;
+  font-weight: 200;
+  transition: transform 0.2s ease;
+}
+
+.faq-question:hover {
+  cursor: pointer;
+}
+
+.faq {
+  padding: 0 30px 24px;
+}
+
+.rotate {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  display: none;
+  padding: 0 68px;
+}
+
+.mydesign-section {
+  max-width: 1440px;
+  margin: auto;
+}
+
+/*blog section*/
+.blog-section {
+  max-width: 1440px;
+  margin: auto;
+}
+
+.blog-row {
+  padding: 0px 74px 110px;
+}
+
+.blog-card-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 46px;
+}
+
+.blog-card {
+  border: 1px solid #e5e5e5;
+  border-radius: 16px;
+  padding: 24px;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+img.blog-image {
+  width: 100%;
+}
+
+.blog-title {
+  padding: 32px 0 24px;
+  font-family: "Oxanium";
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 150%;
+}
+
+.blog-main-title {
+  font-family: "Oxanium";
+  font-weight: 600;
+  font-size: 48px;
+  color: #e64a11;
+  margin: 0;
+  padding-bottom: 46px;
+}
+
+/*footer section*/
+.footer-section {
+  background: #fff8f8;
+}
+
+.footer-row {
+  padding: 0px 74px;
+  border-top: 1px solid #eaeaea;
+}
+
+.footer-title {
+  font-family: "Oxanium";
+  color: #e64a11;
+  font-weight: 600;
+  font-size: 48px;
+  padding-bottom: 32px;
+}
+
+.footer-email {
+  padding: 32px 0;
+  font-family: "Oxanium";
+  font-weight: 500;
+  font-size: 24px;
+}
+
+.footer-container-2 {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 0;
+  align-items: center;
+  font-weight: 500;
+  max-width: 1440px;
+  margin: auto;
+}
+
+.footer-social-links {
+  display: flex;
+  gap: 32px;
+}
+
+.footer-container {
+  padding: 56px 0;
+  max-width: 1440px;
+  margin: auto;
+}
+
+.social-links-box a {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.social-links-box a img {
+  rotate: 0deg;
+}
+
+.footer-social-wrapper {
+  display: flex;
+  gap: 24px;
+}
+
+/*header section*/
+
+.header-section {
+  max-width: 1440px;
+  margin: auto;
+}
+
+.header-row {
+  display: flex;
+  padding: 0px 74px 110px;
+}
+
+.header-col {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  padding: 16px 0;
+}
+img.header-logo {
+  width: 184px;
+  height: 40px;
+}
+
+.header-nav-containor {
+  display: flex;
+  align-items: center;
+  gap: 64px;
+}
+
+/*
+Shivanthi Fernando
+
+START
+*/
+
+.feature-case-card {
+  padding-bottom: 32px;
+}
+
+.feature-case-card-description {
+  line-height: 1.5em;
+}
+
+.about-description {
+  line-height: 1.5em;
+}
+
+.mydesign-description {
+  line-height: 1.5em;
+}
+
+.faq-answer p {
+  line-height: 1.5em;
+}
+
+.blog-title {
+  line-height: 1.5em;
+}
+
+/* Shivanthi Fernando END */
+
+/*nav icon*/
+#nav-icon4 {
+  width: 28px;
+  height: 45px;
+  position: relative;
+  margin: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .5s ease-in-out;
+  -moz-transition: .5s ease-in-out;
+  -o-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  cursor: pointer;
+}
+#nav-icon4 span {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: #232323; 
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .25s ease-in-out;
+  -moz-transition: .25s ease-in-out;
+  -o-transition: .25s ease-in-out;
+  transition: .25s ease-in-out;
+}
+
+#nav-icon4 {
+  display: none;
+}
+
+#nav-icon4 span:nth-child(1) {
+  top: 8px;
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -o-transform-origin: left center;
+  transform-origin: left center;
+}
+
+#nav-icon4 span:nth-child(2) {
+  top: 18px;
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -o-transform-origin: left center;
+  transform-origin: left center;
+}
+
+#nav-icon4 span:nth-child(3) {
+  top: 28px;
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -o-transform-origin: left center;
+  transform-origin: left center;
+}
+
+#nav-icon4.open span:nth-child(1) {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  top: 19px;
+  left: 8px;
+}
+
+#nav-icon4.open span:nth-child(2) {
+  width: 0%;
+  opacity: 0;
+}
+
+#nav-icon4.open span:nth-child(3) {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  top: 39px;
+  left: 8px;
+}
+/*nav icon end*/
+
+@media (max-width: 500px) {
+  
+  .header-nav-containor {
+    display: none;
+  }
+  #nav-icon4 {
+    display: block;
+  }
+  .header-nav-containor-mob-menu {
+    display: flex;
+    position: absolute;
+    left: 0;
+    background: #fff;
+    flex-direction: column;
+    height: 100%;
+    top: 0;
+    width: 100%;
+    padding-top: 20%;
+}
+  
+  .hero-row {
+    flex-direction: column;
+  }
+  .feature-case-card-wrapper {
+    grid-template-columns: 1fr;
+  }
+  .about-row {
+    flex-direction: column;
+  }
+  .blog-card-container {
+    grid-template-columns: 1fr;
+  }
+  .footer-container-2 {
+    flex-direction: column;
+  }
+  .footer-social-links {
+    flex-direction: column;
+    display: none;
+  }
+  h1.hero-gradient {
+    font-size: 36px;
+    line-height: 36px;
+  }
+  .hero-text {
+    font-size: 14px;
+  }
+  .hero-col-2 {
+    width: 100%;
+  }
+  .fill-btn a {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+  .outline-btn a {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+  .feature-case-title {
+    font-size: 24px;
+  }
+  .feature-case-sub-title {
+    font-size: 20px;
+  }
+  .workexp-card {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .header-row {
+    padding: 0px 24px 32px;
+  }
+  .hero-row {
+    padding: 0px 24px 32px;
+  }
+  .feature-row {
+    padding: 32px 24px 32px;
+  }
+  .about-row {
+    padding: 32px 24px 32px;
+    gap: 30px;
+  }
+  .workexp-row {
+    padding: 0px 24px 32px;
+  }
+  .mydesign-row {
+    padding: 0px 24px 32px;
+  }
+  .blog-row {
+    padding: 0px 24px 32px;
+  }
+  .footer-row {
+    padding: 0px 24px;
+  }
+  .feature-case-card-wrapper {
+    padding-bottom: 0px;
+  }
+
+  /*
+  Shivanthi Fernando
+
+  START
+
+  */
+
+  h1.hero-gradient {
+    padding: 10px 0;
+  }
+
+  .hero-btn-wrapper {
+    padding: 24px 0 0 0;
+  }
+
+  .hero-row {
+    gap: 30px;
+  }
+
+  .feature-case-card {
+    padding: 16px;
+  }
+
+  .feature-case-card-description {
+    font-size: 16px;
+    padding: 16px 0;
+    line-height: 1.5em;
+  }
+  .about-title {
+    font-size: 24px;
+  }
+
+  .about-description {
+    font-size: 12px;
+    line-height: 1.5em;
+    padding-bottom: 20px;
+  }
+
+  .workexp-title {
+    font-size: 24px;
+  }
+
+  .faq-container h2 {
+    font-size: 24px;
+  }
+
+  .faq-question {
+    padding: 14px;
+  }
+
+  .mydesign-description {
+    font-size: 12px;
+    line-height: 1.5em;
+  }
+
+  .faq-info-wrapper {
+    font-size: 14px;
+  }
+
+  .faq {
+    padding: 0 0 0;
+    font-size: 14px;
+  }
+
+  .faq-answer {
+    padding: 0 0 0 68px;
+  }
+
+  .faq-answer p {
+    font-size: 12px;
+    line-height: 1.5em;
+  }
+
+  .blog-title {
+    font-size: 16px;
+    padding: 16px 0;
+  }
+
+  .blog-main-title {
+    font-size: 24px;
+  }
+
+  .blog-card {
+    padding: 16px;
+    line-height: 1.5em;
+  }
+
+  .footer-container {
+    padding: 32px 0;
+  }
+
+  .footer-title {
+    font-size: 24px;
+    padding-bottom: 20px;
+  }
+
+  .footer-description {
+    font-size: 10px;
+    line-height: 1.5em;
+  }
+
+  .footer-email {
+    font-size: 14px;
+  }
+
+  .footer-container-2 {
+    font-size: 10px;
+  }
+
+  /*
+
+  Shivanthi Fernando
+
+  END
+  
+  */
+}
