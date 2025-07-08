@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOC Case Study</title>
+    <!-- Google Fonts: Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Montserrat', Arial, sans-serif;
+            background: #fff;
+            color: #202020;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 750px;
+            margin: 0 auto;
+            padding: 32px 16px 64px 16px;
+        }
+        h1 {
+            color: #E64A11;
+            font-size: 2.1em;
+            font-weight: 700;
+            margin-top: 0.5em;
+            margin-bottom: 0.7em;
+            line-height: 1.5;
+        }
+        h2 {
+            color: #FC7D4D;
+            font-size: 1.8em;
+            font-weight: 600;
+            margin-top: 2em;
+            margin-bottom: 0.7em;
+        }
+        h3 {
+            color: #202020;
+            font-size: 1.4em;
+            font-weight: 600;
+            margin-top: 2.5em;
+            margin-bottom: 1.0em;
+        }
+        .section-img, .section-1-img {
+            width: 100%;
+            border-radius: 0px;
+            margin-bottom: 1.5em;
+        }
+        .my-role {
+            color: #E64A11;
+            font-weight: 600;
+           /* font-size: 1.1em; */
+            margin-top: 2em;
+            margin-bottom: 0.5em;
+        }
+        .role-list {
+            color: #E64A11;
+            margin: 0 0 2em 1.2em;
+            padding: 0;
+           /* font-size: 1em; */
+        }
+        .role-list li {
+            color: #202020;
+            font-weight: 400;
+            margin-bottom: 0.2em;
+        }
+        p, ul, li, ol {
+            color: #202020;
+            font-size: 20px;
+            line-height: 1.5;
+        }
+        li {
+            margin-bottom: 0.5em;
+        }
+        /* Common flex layout for two-column sections */
+        .flex-row {
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: flex-start;
+            gap: 0;
+        }
+        .flex-col-left {
+            flex: 1 1 50%;
+            min-width: 220px;
+            max-width: 50%;
+            padding-right: 24px;
+        }
+        .flex-col-right {
+            flex: 1 1 50%;
+            min-width: 220px;
+            max-width: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .stats-img {
+            width: 90%;
+            max-width: 420px;
+            min-width: 180px;
+        }
+        .feedback-img, .existing-img {
+            width: 100%;
+            margin-bottom: 2.5em;
+        }
+        .desc {
+            color: #202020;
+           /* font-size: 1.05em; */
+            margin-bottom: 1.2em;
+        }
+        /* Persona card and image styles */
+        .persona-card {
+            display: flex;
+            align-items: stretch;
+            gap: 48px;
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 16px;
+            padding: 24px 24px 16px 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            flex-wrap: wrap;
+            min-height: 320px;
+        }
+        .persona-img-col {
+            flex: 0 0 240px;
+            max-width: 240px;
+            min-width: 160px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100%;
+        }
+        .persona-img {
+            height: 320px;
+            width: auto;
+            object-fit: cover;
+            border-radius: 12px;
+            display: block;
+        }
+        .persona-details {
+            flex: 1;
+            min-width: 220px;
+        }
+        /*.persona-meta {
+            display: flex;
+            gap: 32px;
+            font-size: 15px;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+        }
+        .persona-name {
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #202020;*
+        }*/
+        @media (max-width: 900px) {
+            .flex-row {
+                flex-direction: column;
+            }
+            .flex-col-left, .flex-col-right {
+                max-width: 100%;
+                flex-basis: 100%;
+                padding-right: 0;
+            }
+            .flex-col-right {
+                justify-content: flex-start;
+            }
+            .persona-card {
+                flex-direction: column;
+                align-items: flex-start;
+                min-height: unset;
+                gap: 24px;
+            }
+            .persona-img-col {
+                max-width: 100%;
+                flex-basis: 100%;
+                align-items: flex-start;
+                height: auto;
+            }
+            .persona-img {
+                height: 260px;
+                width: auto;
+                max-height: 260px;
+            }
+        }
+        /*.user-journey-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0 32px 0;
+            font-size: 16px;
+        }
+        .user-journey-table th, .user-journey-table td {
+            border: 1px solid #FC7D4D;
+            padding: 12px 10px;
+            text-align: left;
+            vertical-align: top;
+        }
+        .user-journey-table th {
+            background: #fff;
+            color: #202020;
+            font-weight: 600;
+        }
+        .user-journey-table tr:nth-child(even) {
+            background: #fff7f3;
+        }*/
+        .solution-card {
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 16px;
+            padding: 28px 32px 18px 32px;
+            margin-bottom: 28px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+        .solution-title {
+            font-size: 1.15em;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #202020;
+        }
+        .solution-number {
+            color: #202020;
+            font-weight: 700;
+            font-size: 1.1em;
+            margin-right: 4px;
+        }
+        .solution-list {
+            margin: 0 0 0 1.2em;
+            padding: 0;
+        }
+        .solution-list li {
+            color: #202020;
+            line-height: 1.5;
+            margin-bottom: 0.5em;
+            position: relative;
+        }
+        .solution-list li::marker {
+            color: #FC7D4D;
+            font-size: 1.2em;
+        }
+        @media (max-width: 600px) {
+            .solution-card {
+                padding: 18px 10px 12px 10px;
+            }
+        }
+        .feedback-cards {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+        .feedback-card {
+            background: #fff;
+            font-size: 20px;
+            line-height: 1.5;
+            border: 1px solid #eee;
+            border-radius: 16px;
+            padding: 32px 28px 32px 28px;
+            flex: 1 1 240px;
+            min-width: 220px;
+            color: #202020;
+            position: relative;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+        .feedback-quote {
+            font-size: 2.5em;
+            color: #eee;
+            position: absolute;
+            top: 18px;
+            right: 24px;
+            font-family: serif;
+        }
+        .back-btn {
+            display: inline-block;
+            margin: 0 auto;
+            padding: 12px 28px;
+            border-radius: 24px;
+            border: 1.5px solid #202020;
+            background: #fff;
+            color: #202020;
+            font-size: 1.1em;
+            font-weight: 500;
+            text-decoration: none;
+            transition: background 0.2s, color 0.2s;
+        }
+        .back-btn:hover {
+            background: #FC7D4D;
+            color: #fff;
+            border-color: #FC7D4D;
+        }
+        @media (max-width: 900px) {
+            .feedback-cards {
+                flex-direction: column;
+                gap: 16px;
+            }
+            .feedback-card {
+                padding: 24px 12px 24px 12px;
+            }
+        }
+        .feedback-quote-img {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 18px;
+            right: 24px;
+            opacity: 0.5;
+        }
+        .boc-footer {
+            background: #FFFCFB;
+            padding: 48px 0 0 0;
+            margin-top: 64px;
+            border-top: 1px solid #f0e6e2;
+        }
+        .footer-content {
+            max-width: 750px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+        .footer-heading {
+            color: #FC7D4D;
+            font-size: 2.3em;
+            font-weight: 700;
+            margin: 0 0 32px 0;
+        }
+        .footer-desc {
+            color: #202020;
+            font-size: 16px;
+            margin: 0 0 32px 0;
+        }
+        .footer-email {
+            color: #202020;
+            font-weight: 500;
+            margin: 0 0 64px 0;
+        }
+        .footer-email a {
+            color: #202020;
+            text-decoration: underline;
+        }
+        .footer-divider {
+            border: none;
+            border-top: 1px solid #e5e5e5;
+            margin: 0 0 0 0;
+        }
+        .footer-bottom {
+            max-width: 750px;
+            margin: 0 auto;
+            font-size: 16px;
+            padding: 18px 16px 18px 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #202020;
+            gap: 0;
+        }
+        .footer-copyright {
+            font-size: 16px;
+            flex: 0 0 auto;
+            text-align: left;
+        }
+        .footer-socials {
+            flex: 1 1 auto;
+            text-align: right;
+            display: flex;
+            gap: 36px;
+            justify-content: flex-end;
+            align-items: center;
+        }
+        .footer-socials a {
+            color: #202020;
+            font-size: 16px;
+            text-decoration: none;
+            transition: color 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .footer-socials a:hover {
+            color: #FC7D4D;
+        }
+        @media (max-width: 700px) {
+            .footer-bottom {
+                flex-direction: column;
+                gap: 10px;
+                align-items: flex-start;
+            }
+            .footer-socials {
+                justify-content: flex-start;
+                gap: 18px;
+                margin-top: 6px;
+            }
+        }
+        .footer-link-icon {
+            width: 1em;
+            height: 1em;
+            vertical-align: middle;
+            margin-right: 6px;
+            stroke-width: 2.2;
+        }
+        .solution-list, .solution-list li, .footer-content, .footer-email, .footer-bottom, .desc, .user-journey-table, .user-journey-table th, .user-journey-table td {
+            font-size: 20px !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Improved 4 key features of the BOC mobile app to reduce user confusion</h1>
+        <img src="assets/img/boc_case_study/1_Thumbnail.png" alt="BOC App Hero" class="section-1-img">
+        <p>This case study was done to analyze the mobile banking app of Bank of Ceylon (BOC) which is a leading bank in Sri Lanka. The analysis was done to identify the customer pain points based on the customer reviews in Apple App Store.</p>
+        <p>Through a combination of product analysis, competitor analysis and user research, strategic product enhancements were proposed to provide a better user experience and support the business to achieve their goals in terms of improving user acquisition, engagement and retention.</p>
+        <h2>My Role</h2>
+        <ul class="role-list">
+            <li>UX Designer</li>
+        </ul>
+        <h2>Problem Statement</h2>
+        <p><b>BOC mobile banking users</b> need a more seamless and flexible way to manage their banking tasks because the app currently has a <b>frustrating login process</b> and lacks key features like <b>fixed deposit creation</b>, <b>saving payee details</b>, and <b>cancelling scheduled transactions</b>, which leads to <b>reduced engagement and a shift to competitor apps</b>.</p>
+    
+        <h2>Research and Problem Identification</h2>
+        <div style="text-align:center; margin-bottom: 24px;">
+            <img src="assets/img/boc_case_study/2_Stats.png" alt="Stats Pie Chart" class="stats-img">
+        </div>
+        <ul>
+            <li>Conducted user research by reviewing and analyzing user feedback for BOC Mobile Banking App (B App) via Apple App Store.</li>
+            <li>Reviewed 100 feedbacks sorted by most recent feedback (last 12 months).</li>
+            <li>The majority of users rated the app with 1 star.</li>
+            <li>According to my analysis, 82 feedbacks out of 100 are with 1 star rating.</li>
+            <li>Analyzed the customer feedbacks and identified 4 areas of improvement that affect user experience, user acquisition, engagement and retention.</li>
+        </ul>
+        <h3>User Feedback</h3>
+        <div class="desc">Key user feedback from apple app store.</div>
+        <img src="assets/img/boc_case_study/3_User Feedback.png" alt="User Feedback" class="feedback-img">
+        <h3>Existing Design</h3>
+        <img src="assets/img/boc_case_study/4_Existing Design.png" alt="Existing Design" class="existing-img">
+        <h3>Competitor Analysis</h3>
+        <p>For the competitor analysis HNB Digital Banking App and NSB Pay App were selected. Which are the apps introduced by two other leading banks in Sri Lanka. HNB Digital Banking App has 4.4 rating, and NSB Pay App has 4.0 rating, where the BOC Mobile Banking App has only 3.0 rating in the Apple App Store. During this competitor analysis, the strengths and weaknesses of the competitor apps and the BOC mobile banking app were addressed.</p>
+
+        <h3>User Personas</h3>
+        <p>User personas were created by considering demographics and characteristics of users to understand their pain points, goals and needs.</p>
+
+        <!-- Persona Images Instead of Cards -->
+        <img src="assets/img/boc_case_study/Persona 1.png" alt="Roshan Perera Persona" class="section-img" style="max-width:100%;margin-bottom:32px;">
+        <img src="assets/img/boc_case_study/Persona 2.png" alt="Amali Karunarathna Persona" class="section-img" style="max-width:100%;margin-bottom:32px;">
+
+        <h3>Existing User Journey</h3>
+        <!-- Existing User Journey Image Instead of Table -->
+        <img src="assets/img/boc_case_study/Existing User Journey.png" alt="Existing User Journey" class="section-img" style="max-width:100%;margin-bottom:32px;">
+        <h2>Proposed Solution</h2>
+        <div class="solution-card">
+            <div class="solution-title"><span class="solution-number">1.</span> Add biometric authentication (face ID) in app login</div>
+            <ul class="solution-list">
+                <li>This is more secured as well as quick and easy methods in app login, which will enhance user experience.</li>
+                <li>With that user acquisition will get increased, which ultimately benefit the company to achieve their goals.</li>
+            </ul>
+        </div>
+        <div class="solution-card">
+            <div class="solution-title"><span class="solution-number">2.</span> Add a new feature for smart fixed deposit creation</div>
+            <ul class="solution-list">
+                <li>This will increase user engagement since they can create their fixed deposit account on the go.</li>
+                <li>In the long run, this will increase user retention and ultimately benefit the company in achieving their goals.</li>
+            </ul>
+        </div>
+        <div class="solution-card">
+            <div class="solution-title"><span class="solution-number">3.</span> Add save payee details option</div>
+            <ul class="solution-list">
+                <li>The recommended method will provide a better user experience, where the user can make their transactions quickly.</li>
+                <li>This leads to increased user engagement and retention, which ultimately benefit the company to achieve their goals.</li>
+            </ul>
+        </div>
+        <div class="solution-card">
+            <div class="solution-title"><span class="solution-number">4.</span> Add option to cancel scheduled transactions</div>
+            <ul class="solution-list">
+                <li>Once a customer schedules a transaction, give them the option to cancel the transaction if they want.</li>
+                <li>This will provide a better user experience, which leads to increased user engagement and retention.</li>
+                <li>Therefore, adding this feature will benefit the company in the long run.</li>
+            </ul>
+        </div>
+        <h2>Ideate the Solution</h2>
+        <h3>User Flow</h3>
+        <img src="assets/img/boc_case_study/7_User FLow - BOC.png" alt="User Flow BOC" class="section-img" style="max-width:100%;margin-bottom:32px;">
+        <h2>Design and Prototype</h2>
+        <h3>Wireframes</h3>
+        <img src="assets/img/boc_case_study/8_Wireframes.png" alt="Wireframes" class="section-img" style="max-width:100%;margin-bottom:32px;">
+        <h2>Design</h2>
+        <h3>1. Login with Face ID</h3>
+        <ul class="solution-list" style="margin-bottom: 24px;">
+            <li>This is more secure as well as a quick and easy method compared to the existing process.</li>
+        </ul>
+        <img src="assets/img/boc_case_study/9_Login with face ID - 1.png" alt="Login with Face ID 1" class="section-img" style="max-width:100%;margin-bottom:32px;">
+        <img src="assets/img/boc_case_study/10_Login with face ID - 2.png" alt="Login with Face ID 2" class="section-img" style="max-width:100%;margin-bottom:32px;">
+        <h3>2. Smart Fixed Deposit Creation</h3>
+        <ul class="solution-list" style="margin-bottom: 24px;">
+            <li>This feature will increase user engagement and user satisfaction because they can create a fixed deposit virtually without going to the bank physically.</li>
+        </ul>
+        <img src="assets/img/boc_case_study/11_Smart fixed deposit creation.png" alt="Login with Face ID 1" class="section-img" style="max-width:100%;margin-bottom:32px;">
+        <h3>3. Save Payee Details</h3>
+        <ul class="solution-list" style="margin-bottom: 24px;">
+            <li>This feature allows the users to save the payee details and use them when needed without entering the same payee details from time to time. This saves users valuable time.</li>
+        </ul>
+        <img src="assets/img/boc_case_study/12_Save Payee Details.png" alt="Login with Face ID 1" class="section-img" style="max-width:100%;margin-bottom:32px;">
+        <h3>4. Cancel Scheduled Transactions</h3>
+        <ul class="solution-list" style="margin-bottom: 24px;">
+            <li>As identified during the user research, once a customer schedule a transaction they can't cancel it through the app. The user need to visit the bank physically to get it done. Therefore this option make the user's life easier.</li>
+        </ul>
+        <img src="assets/img/boc_case_study/13_Cancel schedule transaction.png" alt="Login with Face ID 1" class="section-img" style="max-width:100%;margin-bottom:32px;">
+        <h2>Usability Test and Validate</h2>
+        <div class="feedback-cards">
+            <div class="feedback-card">
+                <!-- <img src="assets/img/boc_case_study/feedback-quote.png" alt="Quote" class="feedback-quote-img"> -->
+                "Face ID made logging in really quick. I didn't have to type my password every time. I liked how the fixed deposit section showed all the steps clearly. But the wording in some parts felt a bit too technical. I had to read twice."
+            </div>
+            <div class="feedback-card">
+                <!-- <img src="assets/img/boc_case_study/feedback-quote.png" alt="Quote" class="feedback-quote-img"> -->
+                "Being able to save payee details is very useful. No need to enter account numbers every time. I also liked the cancel transaction option; it gave me peace of mind. Everything felt smoother than the current app."
+            </div>
+            <div class="feedback-card">
+                <!-- <img src="assets/img/boc_case_study/feedback-quote.png" alt="Quote" class="feedback-quote-img"> -->
+                "The fixed deposit section looked clean and was easy to follow. I felt confident doing it myself. Maybe you can add a comparison with other deposit types to help choose better."
+            </div>
+        </div>
+        <h2>My Learnings</h2>
+        <ul class="solution-list" style="margin-bottom: 32px;">
+            <li>Understanding users helped find real problems.</li>
+            <li>Looking at competitors helped you see industry standards and gave ideas to make the app better.</li>
+            <li>Creating user journeys and personas helped keep the design focused on what users need.</li>
+            <li>Using research to add features like Face ID login and easy fixed deposit creation made the app easier to use and more trustworthy.</li>
+            <li>The whole process helped me learn to think about the big picture, balancing business goals, technical limits, and what users want.</li>
+        </ul>
+        <div style="text-align:center; margin: 56px 0 24px 0; font-size:2em; font-weight:600; color:#202020;">Thanks for Scrolling !!!</div>
+        <div style="text-align:center;">
+            <a href="index.html" class="back-btn"><i data-lucide="arrow-left" class="footer-link-icon"></i>Back to Home Page</a>
+        </div>
+    </div>
+    <footer class="boc-footer">
+        <div class="footer-content">
+            <h2 class="footer-heading">Let's Work Together !!!</h2>
+            <div class="footer-desc">I'm open to new opportunities where I can contribute to impactful projects, grow as a UX professional, and bring a strong design eye with a user-first mindset.</div>
+            <p class="footer-email">Email Me : <a href="mailto:wscsfernando@gmail.com">wscsfernando@gmail.com</a></p>
+        </div>
+        <hr class="footer-divider">
+        <div class="footer-bottom">
+            <span class="footer-copyright">© Shivanthi Fernando 2025</span>
+            <span class="footer-socials">
+                <a href="#" target="_blank">LinkedIn <i data-lucide="arrow-up-right" class="footer-link-icon"></i></a>
+                <a href="#" target="_blank">Behance <i data-lucide="arrow-up-right" class="footer-link-icon"></i></a>
+                <a href="#" target="_blank">Medium <i data-lucide="arrow-up-right" class="footer-link-icon"></i></a>
+                <a href="#" target="_blank">Dribbble <i data-lucide="arrow-up-right" class="footer-link-icon"></i></a>
+            </span>
+        </div>
+    </footer>
+    <script>
+      lucide.createIcons();
+    </script>
+</body>
+</html> 

@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doc990 Case Study</title>
+    <!-- Google Fonts: Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Montserrat', Arial, sans-serif;
+            background: #fff;
+            color: #202020;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 750px;
+            margin: 0 auto;
+            padding: 32px 16px 64px 16px;
+        }
+        h1 {
+            color: #E64A11;
+            font-size: 2.1em;
+            font-weight: 700;
+            margin-top: 0.5em;
+            margin-bottom: 0.7em;
+            line-height: 1.5;
+        }
+        h2 {
+            color: #FC7D4D;
+            font-size: 1.8em;
+            font-weight: 600;
+            margin-top: 2em;
+            margin-bottom: 0.7em;
+        }
+        h3 {
+            color: #202020;
+            font-size: 1.4em;
+            font-weight: 600;
+            margin-top: 2.5em;
+            margin-bottom: 1.0em;
+        }
+        .section-img, .section-1-img {
+            width: 100%;
+            border-radius: 0px;
+            margin-bottom: 1.5em;
+        }
+        .my-role {
+            color: #E64A11;
+            font-weight: 600;
+           /* font-size: 1.1em; */
+            margin-top: 2em;
+            margin-bottom: 0.5em;
+        }
+        .role-list {
+            color: #E64A11;
+            margin: 0 0 2em 1.2em;
+            padding: 0;
+           /* font-size: 1em; */
+        }
+        .role-list li {
+            color: #202020;
+            font-weight: 400;
+            margin-bottom: 0.2em;
+        }
+        p, ul, li, ol {
+            color: #202020;
+            font-size: 20px;
+            line-height: 1.5;
+        }
+        li {
+            margin-bottom: 0.5em;
+        }
+        /* Common flex layout for two-column sections */
+        .flex-row {
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: flex-start;
+            gap: 0;
+        }
+        .flex-col-left {
+            flex: 1 1 50%;
+            min-width: 220px;
+            max-width: 50%;
+            padding-right: 24px;
+        }
+        .flex-col-right {
+            flex: 1 1 50%;
+            min-width: 220px;
+            max-width: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .stats-img {
+            width: 90%;
+            max-width: 420px;
+            min-width: 180px;
+        }
+        .feedback-img, .existing-img {
+            width: 100%;
+            margin-bottom: 2.5em;
+        }
+        .desc {
+            color: #202020;
+           /* font-size: 1.05em; */
+            margin-bottom: 1.2em;
+        }
+        /* Persona card and image styles */
+        .persona-card {
+            display: flex;
+            align-items: stretch;
+            gap: 48px;
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 16px;
+            padding: 24px 24px 16px 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            flex-wrap: wrap;
+            min-height: 320px;
+        }
+        .persona-img-col {
+            flex: 0 0 240px;
+            max-width: 240px;
+            min-width: 160px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100%;
+        }
+        .persona-img {
+            height: 320px;
+            width: auto;
+            object-fit: cover;
+            border-radius: 12px;
+            display: block;
+        }
+        .persona-details {
+            flex: 1;
+            min-width: 220px;
+        }
+        /*.persona-meta {
+            display: flex;
+            gap: 32px;
+            font-size: 15px;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+        }
+        .persona-name {
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #202020;*
+        }*/
+        @media (max-width: 900px) {
+            .flex-row {
+                flex-direction: column;
+            }
+            .flex-col-left, .flex-col-right {
+                max-width: 100%;
+                flex-basis: 100%;
+                padding-right: 0;
+            }
+            .flex-col-right {
+                justify-content: flex-start;
+            }
+            .persona-card {
+                flex-direction: column;
+                align-items: flex-start;
+                min-height: unset;
+                gap: 24px;
+            }
+            .persona-img-col {
+                max-width: 100%;
+                flex-basis: 100%;
+                align-items: flex-start;
+                height: auto;
+            }
+            .persona-img {
+                height: 260px;
+                width: auto;
+                max-height: 260px;
+            }
+        }
+        /*.user-journey-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0 32px 0;
+            font-size: 16px;
+        }
+        .user-journey-table th, .user-journey-table td {
+            border: 1px solid #FC7D4D;
+            padding: 12px 10px;
+            text-align: left;
+            vertical-align: top;
+        }
+        .user-journey-table th {
+            background: #fff;
+            color: #202020;
+            font-weight: 600;
+        }
+        .user-journey-table tr:nth-child(even) {
+            background: #fff7f3;
+        }*/
+        .solution-card {
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 16px;
+            padding: 28px 32px 18px 32px;
+            margin-bottom: 28px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+        .solution-title {
+            font-size: 1.15em;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #202020;
+        }
+        .solution-number {
+            color: #202020;
+            font-weight: 700;
+            font-size: 1.1em;
+            margin-right: 4px;
+        }
+        .solution-list {
+            margin: 0 0 0 1.2em;
+            padding: 0;
+        }
+        .solution-list li {
+            color: #202020;
+            line-height: 1.5;
+            margin-bottom: 0.5em;
+            position: relative;
+        }
+        .solution-list li::marker {
+            color: #FC7D4D;
+            font-size: 1.2em;
+        }
+        @media (max-width: 600px) {
+            .solution-card {
+                padding: 18px 10px 12px 10px;
+            }
+        }
+        .feedback-cards {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+        .feedback-card {
+            background: #fff;
+            font-size: 20px;
+            line-height: 1.5;
+            border: 1px solid #eee;
+            border-radius: 16px;
+            padding: 32px 28px 32px 28px;
+            flex: 1 1 240px;
+            min-width: 220px;
+            color: #202020;
+            position: relative;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+        .feedback-quote {
+            font-size: 2.5em;
+            color: #eee;
+            position: absolute;
+            top: 18px;
+            right: 24px;
+            font-family: serif;
+        }
+        .back-btn {
+            display: inline-block;
+            margin: 0 auto;
+            padding: 12px 28px;
+            border-radius: 24px;
+            border: 1.5px solid #202020;
+            background: #fff;
+            color: #202020;
+            font-size: 1.1em;
+            font-weight: 500;
+            text-decoration: none;
+            transition: background 0.2s, color 0.2s;
+        }
+        .back-btn:hover {
+            background: #FC7D4D;
+            color: #fff;
+            border-color: #FC7D4D;
+        }
+        @media (max-width: 900px) {
+            .feedback-cards {
+                flex-direction: column;
+                gap: 16px;
+            }
+            .feedback-card {
+                padding: 24px 12px 24px 12px;
+            }
+        }
+        .feedback-quote-img {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 18px;
+            right: 24px;
+            opacity: 0.5;
+        }
+        .boc-footer {
+            background: #FFFCFB;
+            padding: 48px 0 0 0;
+            margin-top: 64px;
+            border-top: 1px solid #f0e6e2;
+        }
+        .footer-content {
+            max-width: 750px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+        .footer-heading {
+            color: #FC7D4D;
+            font-size: 2.3em;
+            font-weight: 700;
+            margin: 0 0 32px 0;
+        }
+        .footer-desc {
+            color: #202020;
+            font-size: 16px;
+            margin: 0 0 32px 0;
+        }
+        .footer-email {
+            color: #202020;
+            font-weight: 500;
+            margin: 0 0 64px 0;
+        }
+        .footer-email a {
+            color: #202020;
+            text-decoration: underline;
+        }
+        .footer-divider {
+            border: none;
+            border-top: 1px solid #e5e5e5;
+            margin: 0 0 0 0;
+        }
+        .footer-bottom {
+            max-width: 750px;
+            margin: 0 auto;
+            font-size: 16px;
+            padding: 18px 16px 18px 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #202020;
+            gap: 0;
+        }
+        .footer-copyright {
+            font-size: 16px;
+            flex: 0 0 auto;
+            text-align: left;
+        }
+        .footer-socials {
+            flex: 1 1 auto;
+            text-align: right;
+            display: flex;
+            gap: 36px;
+            justify-content: flex-end;
+            align-items: center;
+        }
+        .footer-socials a {
+            color: #202020;
+            font-size: 16px;
+            text-decoration: none;
+            transition: color 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .footer-socials a:hover {
+            color: #FC7D4D;
+        }
+        @media (max-width: 700px) {
+            .footer-bottom {
+                flex-direction: column;
+                gap: 10px;
+                align-items: flex-start;
+            }
+            .footer-socials {
+                justify-content: flex-start;
+                gap: 18px;
+                margin-top: 6px;
+            }
+        }
+        .footer-link-icon {
+            width: 1em;
+            height: 1em;
+            vertical-align: middle;
+            margin-right: 6px;
+            stroke-width: 2.2;
+        }
+        .solution-list, .solution-list li, .footer-content, .footer-email, .footer-bottom, .desc, .user-journey-table, .user-journey-table th, .user-journey-table td {
+            font-size: 20px !important;
+        }
+        .survey-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            margin-bottom: 32px;
+        }
+        .survey-card {
+            background: #FFF6F4;
+            border-radius: 16px;
+            padding: 36px 32px 32px 32px;
+            display: block;
+            margin-bottom: 0;
+        }
+        .survey-percent {
+            color: #FC7D4D;
+            font-size: 2.3em;
+            font-weight: 700;
+            margin-bottom: 0.1em;
+            line-height: 1.1;
+        }
+        .survey-desc {
+            color: #888;
+            font-size: 20px;
+            font-weight: 400;
+            margin-bottom: 24px;
+        }
+        /*.survey-chart-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 18px 18px 10px 18px;
+            box-shadow: 0 1px 6px rgba(0,0,0,0.04);
+            border: 1px solid #f3e6e2;
+            max-width: fill;
+            margin: 0 auto;
+        }*/
+        .survey-img {
+            width: 100%;
+            max-width: fill;
+            height: auto;
+            border-radius: 24px;
+            background: #fff;
+            border: none;
+            box-shadow: none;
+            display: block;
+            margin: 0 auto;
+        }
+        @media (max-width: 900px) {
+            .survey-card {
+                padding: 24px 10px 18px 10px;
+            }
+            .survey-chart-card {
+                padding: 10px 4px 4px 4px;
+                max-width: 100%;
+            }
+            .survey-img {
+                max-width: 100%;
+            }
+        }
+        .solution-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            margin-bottom: 32px;
+        }
+        .solution-card {
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 24px;
+            padding: 32px 32px 18px 32px;
+            margin-bottom: 0;
+            box-shadow: none;
+        }
+        .solution-title {
+            font-size: 1.15em;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #202020;
+        }
+        .solution-number {
+            color: #202020;
+            font-weight: 700;
+            font-size: 1.1em;
+            margin-right: 4px;
+        }
+        .solution-list {
+            margin: 0 0 0 1.2em;
+            padding: 0;
+        }
+        .solution-list li {
+            color: #202020;
+            line-height: 1.5;
+            margin-bottom: 0.5em;
+            position: relative;
+        }
+        .solution-list li::marker {
+            color: #FC7D4D;
+            font-size: 1.2em;
+        }
+        @media (max-width: 600px) {
+            .solution-card {
+                padding: 18px 10px 12px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Enhancing the user experience of Doc990 through AI powered assistance</h1>
+        <img src="assets/img/doc990_case_study/1_Thumbnail.png" alt="BOC App Hero" class="section-1-img">
+        <p>Doc990 is a leading digital healthcare platform in Sri Lanka, offering doctor channeling, order medicine , tele channeling and other medical services to millions of users. While the app provides great value, user feedback and research have revealed challenges, especially for elderly users and those with busy schedules.</p>
+        <p>This case study introduces MediMate, a conversational AI assistant integrated into the existing Doc990 app to make healthcare access smarter, faster, and more user-friendly.</p>
+        <h2>My Role</h2>
+        <ul class="role-list">
+            <li>UX Designer</li>
+        </ul>
+        <h2>Problem Statement</h2>
+        <p>DOC990 users need a more intuitive and inclusive healthcare experience because the current app lacks guidance in choosing the right specialist, delays access to lab report insights, and doesn’t support Sinhala or Tamil effectively. These gaps lead to confusion, delayed treatment, and reduced accessibility for a significant portion of users.</p>
+    
+        <h2>Research and Problem Identification</h2>
+        <h3>User Survey</h3>
+        <p>To identify user pain points, goals and needs I conducted a usability survey and was able to collect 10 responses. The survey aimed to understand users current experience.</p>
+        <div style="margin-bottom: 18px; font-weight: 600;">Key findings:</div>
+        <div class="survey-cards">
+            <div class="survey-card">
+                <div class="survey-percent">60%</div>
+                <div class="survey-desc">were unsure which specialist to consult based on symptoms.</div>
+                <div class="survey-chart-card">
+                    <img src="assets/img/doc990_case_study/2_Survay result 1.png" alt="Survey Result 1" class="survey-img">
+                </div>
+            </div>
+            <div class="survey-card">
+                <div class="survey-percent">70%</div>
+                <div class="survey-desc">seek clarity on lab reports without waiting to see a doctor</div>
+                <div class="survey-chart-card">
+                    <img src="assets/img/doc990_case_study/3_Survay result 2.png" alt="Survey Result 2" class="survey-img">
+                </div>
+            </div>
+            <div class="survey-card">
+                <div class="survey-percent">60%</div>
+                <div class="survey-desc">preferred Sinhala or Tamil over English, highlighting the need for multilingual support.</div>
+                <div class="survey-chart-card">
+                    <img src="assets/img/doc990_case_study/4_Survay result 3.png" alt="Survey Result 3" class="survey-img">
+                </div>
+            </div>
+        </div>
+
+        <h3>User Personas</h3>
+        <p>User personas were created by considering demographics and characteristics of users to understand their pain points, goals and needs.</p>
+
+        
+        <!-- Persona Images Instead of Cards -->
+        <img src="assets/img/doc990_case_study/5_Persona 1.png" alt="Nimali Aberathne " class="section-img" style="max-width:100%;margin-bottom:32px;">
+        <img src="assets/img/doc990_case_study/6_Persona 2.png" alt="Kusum Nandasiri Persona" class="section-img" style="max-width:100%;margin-bottom:32px;">
+
+        <h2>Proposed Solution - MediMate AI</h2>
+        <p>To address the identified issues, MediMate, an AI-powered voice and chat assistant, is introduced within the Doc990 app. It combines natural conversation with quick-access button interactions to improve user experience.</p>
+        <div style="margin: 32px 0 18px 0; font-size:20px;">Key features of MediMate AI are:</div>
+        <div class="solution-cards">
+            <div class="solution-card">
+                <div class="solution-title"><span class="solution-number">1.</span> Doctor Recommendations and Booking Based on Symptoms</div>
+                <ul class="solution-list">
+                    <li>Allow users to book doctors through a simple chat and voice, streamlining the process with minimal taps and clicks.</li>
+                </ul>
+            </div>
+            <div class="solution-card">
+                <div class="solution-title"><span class="solution-number">2.</span> AI-Powered Lab Report Insights</div>
+                <ul class="solution-list">
+                    <li>Read and interpret lab reports, providing easy-to-understand insights and wellness recommendations.</li>
+                </ul>
+            </div>
+            <div class="solution-card">
+                <div class="solution-title"><span class="solution-number">3.</span> Multilingual Chat & Voice Support</div>
+                <ul class="solution-list">
+                    <li>Support English, Sinhala and Tamil making it inclusive and accessible to a wider audience.</li>
+                </ul>
+            </div>
+        </div>
+        <h2>Ideate the Solution</h2>
+        <p>The following user flows were designed to ensure a seamless and intuitive experience for users interacting with MediMate AI within the Doc990 app.</p>
+        <h3>Flow 1.0 - Main User Flow</h3>
+        <img src="assets/img/doc990_case_study/7_Main Flow - Flow 1.0.png" alt="Main User Flow" class="section-img" style="max-width:100%;margin-bottom:32px;">
+        <h3>Flow 1.1 - Doctor Booking Flow</h3>
+        <img src="assets/img/doc990_case_study/8_Doctor Booking Flow - Flow 1.1.png" alt="Doctor Booking Flow" class="section-img" style="max-width:100%;margin-bottom:32px;">
+        <h3>Flow 1.2 - Read Lab Report</h3>
+        <img src="assets/img/doc990_case_study/9_Main Flow - Flow 1.2.png" alt="Read Lab Report" class="section-img" style="max-width:100%;margin-bottom:32px;">
+        <h2>Design and Prototype</h2>
+        <h3>Wireframes</h3>
+        <img src="assets/img/doc990_case_study/10_Wireframes.png" alt="Wireframes" class="section-img" style="max-width:100%;margin-bottom:32px;">
+        <h3>Color Palette</h3>
+        <p>While blue and green are commonly used in healthcare apps for their calm and trustworthy feel, I chose to retain Doc990’s signature red as the primary color to maintain brand consistency and user familiarity. So I applied it selectively for key CTAs.</p>
+        <p>To avoid visual clutter, I balanced it with neutral backgrounds and clear visual hierarchy, ensuring a cohesive and accessible user experience.</p>
+        <img src="assets/img/doc990_case_study/11_Colors.png" alt="Color Palette" class="section-img" style="max-width:100%;margin-bottom:32px;">
+        <h3>Design and Prototype</h3>
+        <p>Home Screen and Optimization</p>
+        <p>While addressing the main problem statement, I also identified a usability issue on the home screen of the Doc990 app. It displays 3 main options and 8 sub options along with the bottom navigation bar, creating a cluttered interface and increasing cognitive load especially for first-time users.</p>
+        <p>To simplify navigation and reduce cognitive effort, I revised the layout to show 5 key options prominently and grouped the remaining sub options under an “Other Services” section.</p>
+        <p>I also added a clear call-to-action (CTA) for the newly introduced MediMate AI feature, making it easily accessible from the home screen. These changes enhance visual hierarchy and result in a cleaner, more intuitive user experience.</p>
+        <div style="display: flex; justify-content: center; gap: 48px; margin-bottom: 8px; flex-wrap: wrap;">
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <img src="assets/img/doc990_case_study/12_Home Page Doc990.png" alt="Home Screen Optimization" class="section-img" style="max-width:600px; width:100%; margin-bottom:8px;">
+                <div style="display: flex; width:100%; justify-content: space-between; margin-top: 0;">
+                    <span style="flex:1; text-align:center; font-style:italic; color:#888; font-size:16px;">Existing Home Screen</span>
+                    <span style="flex:1; text-align:center; font-style:italic; color:#888; font-size:16px;">New Home Screen</span>
+                </div>
+            </div>
+        </div>
+        <h3>1. Doctor Recommendations and Booking Based on Symptoms</h3>
+        <img src="assets/img/doc990_case_study/13_Doctor Booking.png" alt="DOctor Recommendation" class="section-img" style="max-width:100%;margin-bottom:32px;">
+        <h3>2. Read Lab Reports</h3>
+        <img src="assets/img/doc990_case_study/14_Lab Report.png" alt="Lab Reports" class="section-img" style="max-width:100%;margin-bottom:32px;">
+         <h2>Usability Test and Feedback</h2>
+        <p>I conducted usability testing with real users to evaluate the redesigned Doc990 app. The goal was to test the AI-based features and identify both improvements and remaining pain points. Feedback showed overall satisfaction, but also highlighted areas for further refinement.</p>
+        <div class="feedback-cards" style="margin-bottom: 48px;">
+            <div class="feedback-card">
+                <span class="feedback-quote">&rdquo;</span>
+                “I liked that I could choose Sinhala right at the start. It made me feel more confident using the app without asking my kids for help.”
+            </div>
+            <div class="feedback-card">
+                <span class="feedback-quote">&rdquo;</span>
+                “I like the idea, but I still feel more comfortable calling the hospital and speaking to someone. This feels a bit too robotic.”
+            </div>
+            <div class="feedback-card">
+                <span class="feedback-quote">&rdquo;</span>
+                “I like the AI lab report insights, but it would be better with more explanation for medical terms”
+            </div>
+            <div class="feedback-card">
+                <span class="feedback-quote">&rdquo;</span>
+                “I didn’t know which doctor to book for my issue, but this helped me choose the right one based on my symptoms. That saved time.”
+            </div>
+        </div>
+        <h2>Next Step</h2>
+        <p>Next, I will address user feedback by improving key features, enhancing usability, and refining the overall experience. Further testing will be conducted to validate these changes and ensure the solution effectively meets user needs.</p>
+
+        
+        <div style="text-align:center; margin: 56px 0 24px 0; font-size:2em; font-weight:600; color:#202020;">Thanks for Scrolling !!!</div>
+        <div style="text-align:center;">
+            <a href="index.html" class="back-btn"><i data-lucide="arrow-left" class="footer-link-icon"></i>Back to Home Page</a>
+        </div>
+    </div>
+    <footer class="boc-footer">
+        <div class="footer-content">
+            <h2 class="footer-heading">Let's Work Together !!!</h2>
+            <div class="footer-desc">I'm open to new opportunities where I can contribute to impactful projects, grow as a UX professional, and bring a strong design eye with a user-first mindset.</div>
+            <p class="footer-email">Email Me : <a href="mailto:wscsfernando@gmail.com">wscsfernando@gmail.com</a></p>
+        </div>
+        <hr class="footer-divider">
+        <div class="footer-bottom">
+            <span class="footer-copyright">© Shivanthi Fernando 2025</span>
+            <span class="footer-socials">
+                <a href="#" target="_blank">LinkedIn <i data-lucide="arrow-up-right" class="footer-link-icon"></i></a>
+                <a href="#" target="_blank">Behance <i data-lucide="arrow-up-right" class="footer-link-icon"></i></a>
+                <a href="#" target="_blank">Medium <i data-lucide="arrow-up-right" class="footer-link-icon"></i></a>
+                <a href="#" target="_blank">Dribbble <i data-lucide="arrow-up-right" class="footer-link-icon"></i></a>
+            </span>
+        </div>
+    </footer>
+    <script>
+      lucide.createIcons();
+    </script>
+</body>
+</html> 
